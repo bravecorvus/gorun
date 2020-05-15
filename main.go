@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"strings"
 	"sync"
+	"time"
 )
 
 func init() {
@@ -34,10 +35,12 @@ func main() {
 	cmd.Stdout = &out
 	cmd.Stderr = &stderr
 
+	compileStart := time.Now()
 	if err := cmd.Run(); err != nil {
 		panic(stderr.String())
 	}
 	fmt.Println(out.String())
+	fmt.Println("go build took " + time.Since(compileStart).String())
 
 	cmd = exec.Command("./" + executableName)
 
