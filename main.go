@@ -40,7 +40,7 @@ func main() {
 		panic(stderr.String())
 	}
 	fmt.Println(out.String())
-	fmt.Println("go build took " + time.Since(compileStart).String())
+	fmt.Println("'go build' took " + time.Since(compileStart).String() + "\n")
 
 	cmd = exec.Command("./" + executableName)
 
