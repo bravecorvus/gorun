@@ -2,5 +2,5 @@
 > Andrew Lee
 
 ```
-go install github.com/gilgameshskytrooper/gorun
+go get -u github.com/gilgameshskytrooper/gorun
 ```
