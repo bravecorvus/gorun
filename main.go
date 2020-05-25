@@ -14,10 +14,6 @@ import (
 	"time"
 )
 
-func init() {
-	ioutil.WriteFile("./output.txt", []byte(""), 0644)
-}
-
 func main() {
 	path := Pwd()
 	goModBytes, err := ioutil.ReadFile(path + "go.mod")
@@ -41,6 +37,8 @@ func main() {
 	}
 	fmt.Println(out.String())
 	fmt.Println("'go build' took " + time.Since(compileStart).String() + "\n")
+
+	ioutil.WriteFile("./output.txt", []byte(""), 0644)
 
 	cmd = exec.Command("./" + executableName)
 
