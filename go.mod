@@ -1,3 +1,3 @@
-module github.com/gilgameshskytrooper/gorun
+module github.com/bravecorvus/gorun
 
 go 1.14
